@@ -2343,7 +2343,7 @@ h2o.sum <- function(x,na.rm = FALSE) {
 #' @export
 h2o.prod <- function(x) {
   if( is.H2OFrame(x) ) prod(x)
-  else prod(x,na.rm)
+  else prod(x)
 }
 
 #'
@@ -2418,20 +2418,6 @@ h2o.nrow <- function(x) {
 h2o.ncol <- function(x) {
   if( is.H2OFrame(x) ) ncol(x)
   else ncol(x)
-}
-
-#'
-#' Get or set the length of vectors (including lists) and factors,
-#' and of any other R object for which a method has been defined.
-#'
-#' @name h2o.length
-#' @param x An H2OFrame object.
-#' @param value a non-negative integer or double (which will be rounded down).
-#' @seealso \code{\link[base]{length}} for the base R implementation.
-#' @export
-h2o.length <- function(x) {
-  if( is.H2OFrame(x) ) length(x)
-  else length(x)
 }
 
 #'
