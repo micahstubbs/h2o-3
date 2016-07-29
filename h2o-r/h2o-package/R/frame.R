@@ -2294,9 +2294,9 @@ h2o.abs <- function(x) {
 }
 
 #'
-#'‘ceiling’ takes a single numeric argument ‘x’ and returns a
+#' ceiling takes a single numeric argument x and returns a
 #' numeric vector containing the smallest integers not less than the
-#' corresponding elements of ‘x’.
+#' corresponding elements of x.
 #'
 #' @name h2o.ceiling
 #' @param x An H2OFrame object.
@@ -2308,9 +2308,9 @@ h2o.ceiling <- function(x) {
 }
 
 #'
-#'‘floor’ takes a single numeric argument ‘x’ and returns a numeric
+#' floor takes a single numeric argument x and returns a numeric
 #' vector containing the largest integers not greater than the
-#' corresponding elements of ‘x’.
+#' corresponding elements of x.
 #'
 #' @name h2o.floor
 #' @param x An H2OFrame object.
@@ -2397,7 +2397,7 @@ h2o.max <- function(x,na.rm = FALSE) {
 }
 
 #'
-#' Return the number of rows present in ‘x’.
+#' Return the number of rows present in x.
 #'
 #' @name h2o.nrow
 #' @param x An H2OFrame object.
@@ -2409,7 +2409,7 @@ h2o.nrow <- function(x) {
 }
 
 #'
-#' Return the number of columns present in ‘x’.
+#' Return the number of columns present in x.
 #'
 #' @name h2o.ncol
 #' @param x An H2OFrame object.
