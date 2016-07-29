@@ -2132,8 +2132,6 @@ round <- function(x, digits=0) {
   else base::round(x,digits)
 }
 
-
-
 #'
 #' Scaling and Centering of an H2OFrame
 #'
@@ -2162,7 +2160,296 @@ h2o.scale <- function(x, center = TRUE, scale = TRUE) .newExpr("scale", chk.H2OF
 scale.H2OFrame <- h2o.scale
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Casting Operations: as.data.frame, as.factor,
+# Below takes H2O primities and appends h2o.* to ensure all H2O primitives exist with h2o.*
+# This will deal with some of the primitives in H2O:
+# .h2o.primitives = c(
+#    "*", "+", "/", "-", "^", "%%", "%/%", #No h2o.* needed...#
+#    "==", "!=", "<", ">", "<=", ">=", #No h2o.* needed...#
+#    "cos", "sin", "acos", "cosh", "tan", "tanh", "exp", "log", "sqrt",
+#    "abs", "ceiling", "floor",
+#    "mean", "sd", "sum", "prod", "all", "any", "min", "max",
+#    "is.factor", #No h2o.* needed to avoid confusion.#
+#    "nrow", "ncol", "length"
+#  )
+#-----------------------------------------------------------------------------------------------------------------------
+
+#'
+#' Compute the cosine of x
+#'
+#' @name h2o.cos
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{cos}} for the base R implementation.
+#' @export
+h2o.cos <- function(x) {
+  if( is.H2OFrame(x) ) cos(x)
+  else stats::cos(x)
+}
+
+#'
+#' Compute the sine of x
+#'
+#' @name h2o.sin
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{sin}} for the base R implementation.
+#' @export
+h2o.sin <- function(x) {
+  if( is.H2OFrame(x) ) sin(x)
+  else stats::sin(x)
+}
+
+#'
+#' Compute the arc cosine of x
+#'
+#' @name h2o.acos
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{acos}} for the base R implementation.
+#' @export
+h2o.acos <- function(x) {
+  if( is.H2OFrame(x) ) acos(x)
+  else stats::acos(x)
+}
+
+#'
+#' Compute the hyperbolic cosine of x
+#'
+#' @name h2o.cosh
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{cosh}} for the base R implementation.
+#' @export
+h2o.cosh <- function(x) {
+  if( is.H2OFrame(x) ) cosh(x)
+  else stats::cosh(x)
+}
+
+#'
+#' Compute the tangent of x
+#'
+#' @name h2o.tan
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{tan}} for the base R implementation.
+#' @export
+h2o.tan <- function(x) {
+  if( is.H2OFrame(x) ) tan(x)
+  else stats::tan(x)
+}
+
+#'
+#' Compute the hyperbolic tangent of x
+#'
+#' @name h2o.tanh
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{tanh}} for the base R implementation.
+#' @export
+h2o.tanh <- function(x) {
+  if( is.H2OFrame(x) ) tanh(x)
+  else stats::tanh(x)
+}
+
+#'
+#' Compute the exponential function of x
+#'
+#' @name h2o.exp
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{exp}} for the base R implementation.
+#' @export
+h2o.exp <- function(x) {
+  if( is.H2OFrame(x) ) exp(x)
+  else stats::exp(x)
+}
+
+#'
+#' Compute the logarithm of x
+#'
+#' @name h2o.log
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{log}} for the base R implementation.
+#' @export
+h2o.log <- function(x) {
+  if( is.H2OFrame(x) ) log(x)
+  else stats::log(x)
+}
+
+#'
+#' Compute the square root of x
+#'
+#' @name h2o.sqrt
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{sqrt}} for the base R implementation.
+#' @export
+h2o.sqrt <- function(x) {
+  if( is.H2OFrame(x) ) sqrt(x)
+  else stats::sqrt(x)
+}
+
+#'
+#' Compute the absolute value of x
+#'
+#' @name h2o.abs
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{abs}} for the base R implementation.
+#' @export
+h2o.abs <- function(x) {
+  if( is.H2OFrame(x) ) abs(x)
+  else stats::abs(x)
+}
+
+#'
+#'‘ceiling’ takes a single numeric argument ‘x’ and returns a
+#' numeric vector containing the smallest integers not less than the
+#' corresponding elements of ‘x’.
+#'
+#' @name h2o.ceiling
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{ceiling}} for the base R implementation.
+#' @export
+h2o.ceiling <- function(x) {
+  if( is.H2OFrame(x) ) ceiling(x)
+  else stats::ceiling(x)
+}
+
+#'
+#'‘floor’ takes a single numeric argument ‘x’ and returns a numeric
+#' vector containing the largest integers not greater than the
+#' corresponding elements of ‘x’.
+#'
+#' @name h2o.floor
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{floor}} for the base R implementation.
+#' @export
+h2o.floor <- function(x) {
+  if( is.H2OFrame(x) ) floor(x)
+  else stats::floor(x)
+}
+
+#'
+#' Return the sum of all the values present in its arguments.
+#'
+#' @name h2o.sum
+#' @param x An H2OFrame object.
+#' @param na.rm \code{logical}. indicating whether missing values should be removed.
+#' @seealso \code{\link[base]{sum}} for the base R implementation.
+#' @export
+h2o.sum <- function(x,na.rm = FALSE) {
+  if( is.H2OFrame(x) ) sum(x,na.rm)
+  else stats::sum(x,na.rm)
+}
+
+#'
+#' Return the product of all the values present in its arguments.
+#'
+#' @name h2o.prod
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{prod}} for the base R implementation.
+#' @export
+h2o.prod <- function(x) {
+  if( is.H2OFrame(x) ) prod(x)
+  else base::prod(x,na.rm)
+}
+
+#'
+#' Given a set of logical vectors, are all of the values true?
+#'
+#' @name h2o.all
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{all}} for the base R implementation.
+#' @export
+h2o.all <- function(x) {
+  if( is.H2OFrame(x) ) all(x)
+  else stats::all(x)
+}
+
+#'
+#' Given a set of logical vectors, is at least one of the values true?
+#'
+#' @name h2o.any
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{all}} for the base R implementation.
+#' @export
+h2o.any <- function(x) {
+  if( is.H2OFrame(x) ) all(x)
+  else stats::all(x)
+}
+
+#'
+#' Returns the minima of the input values.
+#'
+#' @name h2o.min
+#' @param x An H2OFrame object.
+#' @param na.rm \code{logical}. indicating whether missing values should be removed.
+#' @seealso \code{\link[base]{min}} for the base R implementation.
+#' @export
+h2o.min <- function(x,na.rm = FALSE) {
+  if( is.H2OFrame(x) ) min(x,na.rm)
+  else stats::min(x,na.rm)
+}
+
+#'
+#' Returns the maxima of the input values.
+#'
+#' @name h2o.max
+#' @param x An H2OFrame object.
+#' @param na.rm \code{logical}. indicating whether missing values should be removed.
+#' @seealso \code{\link[base]{max}} for the base R implementation.
+#' @export
+h2o.max <- function(x,na.rm = FALSE) {
+  if( is.H2OFrame(x) ) max(x,na.rm)
+  else stats::max(x,na.rm)
+}
+
+#'
+#' Return the number of rows present in ‘x’.
+#'
+#' @name h2o.nrow
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{nrow}} for the base R implementation.
+#' @export
+h2o.nrow <- function(x) {
+  if( is.H2OFrame(x) ) nrow(x)
+  else stats::nrow(x)
+}
+
+#'
+#' Return the number of columns present in ‘x’.
+#'
+#' @name h2o.ncol
+#' @param x An H2OFrame object.
+#' @seealso \code{\link[base]{ncol}} for the base R implementation.
+#' @export
+h2o.ncol <- function(x) {
+  if( is.H2OFrame(x) ) ncol(x)
+  else stats::ncol(x)
+}
+
+#'
+#' Get or set the length of vectors (including lists) and factors,
+#' and of any other R object for which a method has been defined.
+#'
+#' @name h2o.length
+#' @param x An H2OFrame object.
+#' @param value a non-negative integer or double (which will be rounded down).
+#' @seealso \code{\link[base]{length}} for the base R implementation.
+#' @export
+h2o.length <- function(x) {
+  if( is.H2OFrame(x) ) length(x)
+  else stats::length(x)
+}
+
+#'
+#' Returns a vector containing the minimum and maximum of all the given arguments.
+#'
+#' @name h2o.range
+#' @param x An H2OFrame object.
+#' @param na.rm \code{logical}. indicating whether missing values should be removed.
+#' @param finite \code{logical}. indicating if all non-finite elements should be omitted.
+#' @seealso \code{\link[base]{range}} for the base R implementation.
+#' @export
+h2o.range <- function(x,na.rm = FALSE,finite = FALSE) {
+  if( is.H2OFrame(x) ) range(x,na.rm,finite)
+  else stats::range(x,na.rm,finite)
+}
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Casting Operations: as.data.frame, as.factor
 #-----------------------------------------------------------------------------------------------------------------------
 
 #'
