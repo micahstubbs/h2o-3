@@ -2160,7 +2160,7 @@ h2o.scale <- function(x, center = TRUE, scale = TRUE) .newExpr("scale", chk.H2OF
 scale.H2OFrame <- h2o.scale
 
 #-----------------------------------------------------------------------------------------------------------------------
-# Below takes H2O primities and appends h2o.* to ensure all H2O primitives exist with h2o.*
+# Below takes H2O primitives and appends h2o.* to ensure all H2O primitives exist with h2o.*
 # This will deal with some of the primitives in H2O:
 # .h2o.primitives = c(
 #    "*", "+", "/", "-", "^", "%%", "%/%", #No h2o.* needed...#
