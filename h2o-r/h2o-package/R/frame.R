@@ -2182,7 +2182,7 @@ scale.H2OFrame <- h2o.scale
 #' @export
 h2o.cos <- function(x) {
   if( is.H2OFrame(x) ) cos(x)
-  else stats::cos(x)
+  else cos(x)
 }
 
 #'
@@ -2194,7 +2194,7 @@ h2o.cos <- function(x) {
 #' @export
 h2o.sin <- function(x) {
   if( is.H2OFrame(x) ) sin(x)
-  else stats::sin(x)
+  else sin(x)
 }
 
 #'
@@ -2206,7 +2206,7 @@ h2o.sin <- function(x) {
 #' @export
 h2o.acos <- function(x) {
   if( is.H2OFrame(x) ) acos(x)
-  else stats::acos(x)
+  else acos(x)
 }
 
 #'
@@ -2218,7 +2218,7 @@ h2o.acos <- function(x) {
 #' @export
 h2o.cosh <- function(x) {
   if( is.H2OFrame(x) ) cosh(x)
-  else stats::cosh(x)
+  else cosh(x)
 }
 
 #'
@@ -2230,7 +2230,7 @@ h2o.cosh <- function(x) {
 #' @export
 h2o.tan <- function(x) {
   if( is.H2OFrame(x) ) tan(x)
-  else stats::tan(x)
+  else tan(x)
 }
 
 #'
@@ -2242,7 +2242,7 @@ h2o.tan <- function(x) {
 #' @export
 h2o.tanh <- function(x) {
   if( is.H2OFrame(x) ) tanh(x)
-  else stats::tanh(x)
+  else tanh(x)
 }
 
 #'
@@ -2254,7 +2254,7 @@ h2o.tanh <- function(x) {
 #' @export
 h2o.exp <- function(x) {
   if( is.H2OFrame(x) ) exp(x)
-  else stats::exp(x)
+  else exp(x)
 }
 
 #'
@@ -2266,7 +2266,7 @@ h2o.exp <- function(x) {
 #' @export
 h2o.log <- function(x) {
   if( is.H2OFrame(x) ) log(x)
-  else stats::log(x)
+  else log(x)
 }
 
 #'
@@ -2278,7 +2278,7 @@ h2o.log <- function(x) {
 #' @export
 h2o.sqrt <- function(x) {
   if( is.H2OFrame(x) ) sqrt(x)
-  else stats::sqrt(x)
+  else sqrt(x)
 }
 
 #'
@@ -2290,7 +2290,7 @@ h2o.sqrt <- function(x) {
 #' @export
 h2o.abs <- function(x) {
   if( is.H2OFrame(x) ) abs(x)
-  else stats::abs(x)
+  else abs(x)
 }
 
 #'
@@ -2304,7 +2304,7 @@ h2o.abs <- function(x) {
 #' @export
 h2o.ceiling <- function(x) {
   if( is.H2OFrame(x) ) ceiling(x)
-  else stats::ceiling(x)
+  else ceiling(x)
 }
 
 #'
@@ -2318,7 +2318,7 @@ h2o.ceiling <- function(x) {
 #' @export
 h2o.floor <- function(x) {
   if( is.H2OFrame(x) ) floor(x)
-  else stats::floor(x)
+  else floor(x)
 }
 
 #'
@@ -2331,7 +2331,7 @@ h2o.floor <- function(x) {
 #' @export
 h2o.sum <- function(x,na.rm = FALSE) {
   if( is.H2OFrame(x) ) sum(x,na.rm)
-  else stats::sum(x,na.rm)
+  else sum(x,na.rm)
 }
 
 #'
@@ -2343,7 +2343,7 @@ h2o.sum <- function(x,na.rm = FALSE) {
 #' @export
 h2o.prod <- function(x) {
   if( is.H2OFrame(x) ) prod(x)
-  else base::prod(x,na.rm)
+  else prod(x,na.rm)
 }
 
 #'
@@ -2355,7 +2355,7 @@ h2o.prod <- function(x) {
 #' @export
 h2o.all <- function(x) {
   if( is.H2OFrame(x) ) all(x)
-  else stats::all(x)
+  else all(x)
 }
 
 #'
@@ -2367,7 +2367,7 @@ h2o.all <- function(x) {
 #' @export
 h2o.any <- function(x) {
   if( is.H2OFrame(x) ) all(x)
-  else stats::all(x)
+  else all(x)
 }
 
 #'
@@ -2380,7 +2380,7 @@ h2o.any <- function(x) {
 #' @export
 h2o.min <- function(x,na.rm = FALSE) {
   if( is.H2OFrame(x) ) min(x,na.rm)
-  else stats::min(x,na.rm)
+  else min(x,na.rm)
 }
 
 #'
@@ -2393,7 +2393,7 @@ h2o.min <- function(x,na.rm = FALSE) {
 #' @export
 h2o.max <- function(x,na.rm = FALSE) {
   if( is.H2OFrame(x) ) max(x,na.rm)
-  else stats::max(x,na.rm)
+  else max(x,na.rm)
 }
 
 #'
@@ -2405,7 +2405,7 @@ h2o.max <- function(x,na.rm = FALSE) {
 #' @export
 h2o.nrow <- function(x) {
   if( is.H2OFrame(x) ) nrow(x)
-  else stats::nrow(x)
+  else nrow(x)
 }
 
 #'
@@ -2417,7 +2417,7 @@ h2o.nrow <- function(x) {
 #' @export
 h2o.ncol <- function(x) {
   if( is.H2OFrame(x) ) ncol(x)
-  else stats::ncol(x)
+  else ncol(x)
 }
 
 #'
@@ -2431,7 +2431,7 @@ h2o.ncol <- function(x) {
 #' @export
 h2o.length <- function(x) {
   if( is.H2OFrame(x) ) length(x)
-  else stats::length(x)
+  else length(x)
 }
 
 #'
@@ -2445,7 +2445,7 @@ h2o.length <- function(x) {
 #' @export
 h2o.range <- function(x,na.rm = FALSE,finite = FALSE) {
   if( is.H2OFrame(x) ) range(x,na.rm,finite)
-  else stats::range(x,na.rm,finite)
+  else range(x,na.rm,finite)
 }
 
 #-----------------------------------------------------------------------------------------------------------------------
